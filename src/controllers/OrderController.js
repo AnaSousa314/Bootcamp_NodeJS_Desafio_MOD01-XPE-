@@ -54,6 +54,41 @@ class OrderController{
       console.log(error); 
     }
   }
+
+  updated(req,res){
+    try {
+      const { id, cliente, produto, valor, entregue } = req.body;
+    
+      if (!id || !cliente || !produto || !valor || !entregue == null) {
+        throw new Error("Registro não encontrado 1!")
+      }
+    
+      const index = data.pedidos.findIndex(order => order.id === parseInt(id));
+      
+      if (index === -1){
+        throw new Error("Registro não encontrado 2!");
+      }
+
+      data.pedidos[index].cliente = cliente;
+      data.pedidos[index].produto = produto;
+      data.pedidos[index].valor = valor;
+      data.pedidos[index].entregue = entregue;
+
+      fs.writeFileSync("pedidos.json", JSON.stringify(data, null, 2));
+
+      res.json({pedido: 
+      {
+        cliente: cliente,
+        produto: produto,
+        valor: valor,
+        entregue: entregue
+      }
+      });
+    
+    } catch (error) {
+      console.log({error: error});
+    }
+  }
   
 }
 

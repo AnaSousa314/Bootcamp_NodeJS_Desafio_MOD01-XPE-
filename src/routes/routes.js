@@ -7,5 +7,6 @@ router.get('/', OrderController.index);
 router.post('/newOrder', OrderController.create);
 router.delete('/deleteOrder/:id', OrderController.deleted);
 router.get('/:id', OrderController.findById);
+router.put('/update', OrderController.updated);
 
 export default router;
