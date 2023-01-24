@@ -114,6 +114,24 @@ class OrderController{
       console.log({error: error});
     }
   }
+
+  findClientSumOrders(req,res){
+    try {
+      const client = req.params.client;
+
+      let ordersClientTotal = data.pedidos.filter((item) => {
+        if ((item.cliente != undefined) && (item.entregue == true)){
+          return item.cliente.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/ /g,"").toLowerCase().includes(client.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/ /g,"").toLowerCase())
+        }
+      }).reduce((a,b) => a + b.valor, 0)
+
+      res.json({total: ordersClientTotal})
+    } catch (error) {
+      console.log({error: error});
+    }
+  }
+
+
   
 }
 

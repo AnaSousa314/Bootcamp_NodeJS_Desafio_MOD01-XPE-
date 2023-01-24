@@ -9,5 +9,6 @@ router.delete('/deleteOrder/:id', OrderController.deleted);
 router.get('/:id', OrderController.findById);
 router.put('/update', OrderController.updated);
 router.patch('/update', OrderController.updatedDelivered);
+router.get('/total/:client', OrderController.findClientSumOrders);
 
 export default router;
