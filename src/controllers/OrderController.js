@@ -60,7 +60,7 @@ class OrderController{
       const { id, cliente, produto, valor, entregue } = req.body;
     
       if (!id || !cliente || !produto || !valor || !entregue == null) {
-        throw new Error("Registro não encontrado 1!")
+        throw new Error("Id, cliente, produto, valor e entregue são obrigatórios!")
       }
     
       const index = data.pedidos.findIndex(order => order.id === parseInt(id));
@@ -84,6 +84,31 @@ class OrderController{
         entregue: entregue
       }
       });
+    
+    } catch (error) {
+      console.log({error: error});
+    }
+  }
+
+  updatedDelivered(req,res){
+    try {
+      const order = req.body;
+    
+      if (!order.id || order.entregue == null) {
+        throw new Error("Id e entregue são obrigatórios!")
+      }
+    
+      const index = data.pedidos.findIndex(item => item.id === parseInt(order.id));
+      
+      if (index === -1){
+        throw new Error("Registro não encontrado 2!");
+      }
+
+      data.pedidos[index].entregue = order.entregue;
+
+      fs.writeFileSync("pedidos.json", JSON.stringify(data, null, 2));
+
+      res.json({pedido: data.pedidos[index]});
     
     } catch (error) {
       console.log({error: error});

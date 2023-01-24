@@ -9,7 +9,7 @@
 
 [🐱‍🏍] - 2. Crie um endpoint para atualizar um pedido. Este endpoint deverá receber como parâmetros o ID do pedido a ser alterado e os campos 'CLIENTE', 'PRODUTO', 'VALOR' e 'ENTREGUE'. O endpoint deverá validar se o produto informado existe. Caso não exista, ele deverá retornar um erro; caso exista, o endpoint deverá atualizar as informações recebidas por parâmetros no registro e realizar sua atualização com os novos dados alterados no arquivo pedidos.json.
 
-[ ] - 3. Crie um endpoint para atualizar o status de entrega do pedido, alterando o campo 'ENTREGUE' de acordo com o parâmetro informado. Este endpoint deverá receber como parâmetros o ID do pedido a ser alterado e o novo valor para o campo 'ENTREGUE', sendo os valores possíveis true ou false. Este endpoint deverá atualizar somente o valor do campo 'ENTREGUE' do registro de ID informado, alterando-o no arquivo pedidos.json.
+[🐱‍🏍] - 3. Crie um endpoint para atualizar o status de entrega do pedido, alterando o campo 'ENTREGUE' de acordo com o parâmetro informado. Este endpoint deverá receber como parâmetros o ID do pedido a ser alterado e o novo valor para o campo 'ENTREGUE', sendo os valores possíveis true ou false. Este endpoint deverá atualizar somente o valor do campo 'ENTREGUE' do registro de ID informado, alterando-o no arquivo pedidos.json.
 
 [🐱‍🏍] - 4. Crie um endpoint para excluir um pedido. Este endpoint deverá receber como parâmetro o id do pedido e realizar sua exclusão no arquivo pedidos.json.  
 
