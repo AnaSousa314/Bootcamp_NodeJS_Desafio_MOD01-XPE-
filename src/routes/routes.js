@@ -10,5 +10,6 @@ router.get('/:id', OrderController.findById);
 router.put('/update', OrderController.updated);
 router.patch('/update', OrderController.updatedDelivered);
 router.get('/total/:client', OrderController.findClientSumOrders);
+router.get('/totalProduct/:product', OrderController.findProductSumOrders);
 
 export default router;

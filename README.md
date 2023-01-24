@@ -17,6 +17,6 @@
 
 [🐱‍🏍] - 6. Crie um endpoint para consultar o valor total de pedidos já realizados por um  mesmo  cliente.  O  endpoint  deverá  receber  como  parâmetro  o  cliente, realizar  a  soma  dos  valores  de  todos  os  seus  pedidos  e  retornar  essa informação. O endpoint deve considerar somente os pedidos já entregues. 
 
-[ ] - 7. Crie um endpoint para consultar o valor total de pedidos já realizados para um  determinado  produto.  O  endpoint  deverá  receber  como  parâmetro  o produto,  realizar  a  soma  dos  valores  de  todos  os  pedidos  deste  produto específico e retornar essa informação. O endpoint deve considerar somente os pedidos já entregues. 
+[🐱‍🏍] - 7. Crie um endpoint para consultar o valor total de pedidos já realizados para um  determinado  produto.  O  endpoint  deverá  receber  como  parâmetro  o produto,  realizar  a  soma  dos  valores  de  todos  os  pedidos  deste  produto específico e retornar essa informação. O endpoint deve considerar somente os pedidos já entregues. 
 
 [ ] - 8. Crie um endpoint para retornar os produtos mais vendidos e a quantidade de vezes em que estes foram pedidos. O endpoint não deve receber parâmetros. O endpoint deve calcular os produtos que mais possuem pedidos e retorná-los em ordem decrescente, seguidos pela sua quantidade. Exemplo: [“Pizza A - 30”, “Pizza B – 27”, “Pizza C – 25”, “Pizza D – 23”, “Pizza E – 21”, “Pizza F – 19”, “Pizza G – 17”]. O endpoint deve considerar somente os pedidos já entregues. 

@@ -131,7 +131,22 @@ class OrderController{
     }
   }
 
+  findProductSumOrders(req,res){
+    try {
+      const product = req.params.product;
+      // console.log(product);
+      let ordersProductTotal = data.pedidos.filter((item) => {
+        if ((item.produto != undefined) && (item.entregue == true)){
+          return item.produto.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/ /g,"").toLowerCase().includes(product.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/ /g,"").toLowerCase())
+          // console.log(item.produto.normalize('NFD').replace(/[\u0300-\u036f]/g, ""));
+        }
+      }).reduce((a,b) => a + b.valor, 0);
 
+      res.json({total: ordersProductTotal})
+    } catch (error) {
+      console.log({error: error});
+    }
+  }
   
 }
 
